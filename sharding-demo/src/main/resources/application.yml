@@ -1,0 +1,57 @@
+spring:
+  main:
+    allow-bean-definition-overriding: true
+
+  application:
+    name: belle-street-simple-app
+  # ShardingSphere??????
+  shardingsphere:
+    datasource:
+      names: m1,m2
+      # ????
+      m2:
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://192.168.55.128:3306/sharding?serverTimezone=Hongkong&useUnicode=true&amp&characterEncoding=utf-8
+        username: root
+        password: root
+      # ????
+      m1:
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://192.168.55.128:3307/sharding?serverTimezone=Hongkong&useUnicode=true&amp&characterEncoding=utf-8
+        username: root
+        password: root
+    props:
+      # ??SQL?????false
+      sql:
+        show: true
+    sharding:
+      tables:
+        t_dict:
+          actual-data-nodes: m1.t_dict
+          key-generator:
+            column: dict_id
+            type: SNOWFLAKE
+          table-strategy:
+            inline:
+              sharding-column: dict_id
+              algorithm-expression: t_dict
+            database-strategy:
+              inline:
+                sharding-column: dict_id
+                algorithm-expression: m1
+        course:
+          actual-data-nodes: m$->{1..2}.course_$->{1..2}
+          key-generator:
+            column: cid
+            type: SNOWFLAKE
+          table-strategy:
+            inline:
+              sharding-column: cid
+              algorithm-expression: course_$->{((cid+1)%4).intdiv(2)}
+          database-strategy:
+            inline:
+              sharding-column: cid
+              algorithm-expression: m$->{cid%2+1}
+

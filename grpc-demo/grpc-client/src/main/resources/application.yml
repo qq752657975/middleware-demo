@@ -1,0 +1,15 @@
+server:
+  port: 8088
+spring:
+  application:
+    name: grpc-client
+
+grpc:
+  client:
+    # gRPC??????GrpcClient?????
+    local-grpc-server:
+      # gRPC?????
+      address: 'static://127.0.0.1:9898'
+      enableKeepAlive: true
+      keepAliveWithoutCalls: true
+      negotiationType: plaintext

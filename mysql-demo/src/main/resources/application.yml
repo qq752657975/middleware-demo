@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://47.96.185.178:3310/jydb?serverTimezone=Hongkong&useUnicode=true&amp&characterEncoding=utf-8
+    username: root
+    password: ydb1230..
+
+#elasticsearch:
+#  clusterHost: 101.37.13.174
+#  nodePost: 30390
+
+mybatis-plus:
+  mapper-locations: classpath*:mapper/*.xml
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-column-underline: true
+    db-config:
+      #????
+      logic-delete-field: deleteFlag
+      logic-not-delete-value: 1
+      logic-delete-value: 0
+
+
+
+

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.ygb</groupId>
+        <artifactId>middleware-demo</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <artifactId>grpc-demo</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>grpc-demo</name>
+    <description>grpc-demo</description>
+    <packaging>pom</packaging>
+    <properties>
+        <java.version>11</java.version>
+    </properties>
+
+    <modules>
+        <module>grpc-server</module>
+        <module>grpc-client</module>
+        <module>grpc-lib</module>
+    </modules>
+
+    <dependencies>
+
+    </dependencies>
+
+
+
+</project>

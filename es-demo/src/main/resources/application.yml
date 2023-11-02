@@ -1,0 +1,13 @@
+server:
+  port: 8081
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.55.128:3306/es_demo?serverTimezone=Hongkong&useUnicode=true&amp&characterEncoding=utf-8
+    username: root
+    password: root
+
+
+elasticsearch:
+  clusterHost: 192.168.55.128
+  nodePost: 9200

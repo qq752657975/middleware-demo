@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.ygb.grpclib";
+option java_outer_classname = "HelloWorldProto";
+
+// The greeting service definition.
+service Simple {
+  // Sends a greeting
+  rpc SayHello (HelloRequest) returns (HelloReply) {
+  }
+
+  rpc CreatePosters (HelloRequest) returns (HelloReply) {
+  }
+}
+
+// The request message containing the user's name.
+message HelloRequest {
+  string data = 1;
+  int32  type = 2;
+}
+
+// The response message containing the greetings
+message HelloReply {
+  string data = 1;
+  int32  code = 2;
+
+}

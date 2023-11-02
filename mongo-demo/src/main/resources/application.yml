@@ -1,0 +1,11 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb://admin:admin@121.40.181.114:27017/belle?authSource=admin
+      #uri????????
+      #database: test
+      #host: 192.168.55.128
+      #port: 27017
+      #username: ygb
+      #password: ygb
+      #authentication-database: admin

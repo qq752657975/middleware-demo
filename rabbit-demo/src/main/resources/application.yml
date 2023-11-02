@@ -1,0 +1,15 @@
+
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  rabbitmq:
+    host: 101.37.13.174
+    username: root
+    password: 123456
+    port: 30056
+    virtual-host: /
+    listener:
+      simple:
+        acknowledge-mode: manual
+server:
+  port: 8888

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ygb.mysqldemo.mapper.TPmUserMapper">
+
+
+    <select id="selectUid" resultType="com.ygb.mysqldemo.pojo.TpmUserDate">
+        SELECT
+            tpu.user_id,
+            tpu.phone_number,
+            tpu1.user_id as u_user_id,
+            tpu1.phone_number as u_phone_number
+        FROM
+            t_pm_user tpu
+                LEFT JOIN t_pm_user tpu1 ON tpu.u_id = tpu1.user_id
+    </select>
+</mapper>
