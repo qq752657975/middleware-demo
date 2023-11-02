@@ -1,7 +1,7 @@
 package com.ygb.duibbointerface;
 
 /**
- * dubbo服务接口定义
+ * dubbo服务接口定义  11111111
  *
  * @Author ygb
  * @Version 1.0
